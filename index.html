@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loburn Lodge — Farmstay in North Canterbury — Opening Soon</title>
+  <meta name="description" content="Loburn Lodge — a relaxed farmstay in North Canterbury, New Zealand. Opening soon. Get in touch for early enquiries and bookings." />
+  <link rel="canonical" href="https://loburnlodge.co.nz/" />
+  <meta name="theme-color" content="#0f3d2e" />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Loburn Lodge — Farmstay opening soon" />
+  <meta property="og:description" content="A relaxed farmstay experience in North Canterbury. Opening soon — contact us for early enquiries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://loburnlodge.co.nz/" />
+  <meta property="og:image" content="/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root {
+      --bg: #0b2f23;      /* deep green */
+      --fg: #f7f7f5;      /* near-white */
+      --muted: #c8d2cc;   /* soft grey-green */
+      --accent: #d6a756;  /* warm gold */
+      --ink: #1a1a1a;     /* body text on light */
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Noto Sans", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+    /* Header */
+    .topbar { background: var(--bg); color: var(--fg); }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .5px; }
+    .brand .mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #0f3d2e 0%, #195844 60%, #2a6a55 100%); box-shadow: inset 0 0 0 2px rgba(255,255,255,.12); }
+    .brand .name { font-size: 1.1rem; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 56vh;
+      display: grid;
+      place-items: center;
+      color: var(--fg);
+      text-align: center;
+      background: var(--bg);
+      overflow: clip;
+    }
+    .hero::before {
+      /* Replace url() with your own hero image: /images/hero.jpg */
+      content: "";
+      position: absolute; inset: 0;
+      background: 
+        radial-gradient(1200px 600px at 80% 20%, rgba(214,167,86,.25), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.6)),
+        url('/images/hero.jpg') center/cover no-repeat;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+      z-index: 0;
+    }
+    .hero .inner { position: relative; z-index: 1; padding: 60px 16px; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 12px; line-height: 1.15; }
+    .hero p { margin: 0 0 20px; font-size: clamp(1rem, 2.2vw, 1.25rem); color: #ecf1ee; }
+    .cta {
+      display: inline-block; text-decoration: none; font-weight: 600; letter-spacing: .3px;
+      background: var(--accent); color: #1a1205; padding: 12px 18px; border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25); transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .cta:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,.28); }
+
+    /* Content */
+    .section { padding: 48px 16px; }
+    .lead { font-size: 1.1rem; color: #333; max-width: 60ch; }
+    .gallery { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 20px; }
+    .card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+    .img { aspect-ratio: 16/10; background: #e6ede9 center/cover no-repeat; display: block; width: 100%; }
+    .img.one { background-image: url('/images/photo-1.jpg'); }
+    .img.two { background-image: url('/images/photo-2.jpg'); }
+
+    @media (min-width: 720px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Contact */
+    .contact { background: #f7faf8; border-top: 1px solid #e5efe9; }
+    .contact-grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+    .contact-box { background: #fff; border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+    .contact a { color: #0f5132; font-weight: 600; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer { color: #67736e; font-size: .95rem; padding: 22px 16px 40px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div class="brand" aria-label="Loburn Lodge">
+        <div class="mark" aria-hidden="true"></div>
+        <div class="name">Loburn Lodge</div>
+      </div>
+      <nav aria-label="Quick links" style="opacity:.9">
+        <a href="#contact" style="color:var(--muted); text-decoration:none; font-weight:600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" role="banner">
+    <div class="inner wrap">
+      <h1>Farmstay opening soon</h1>
+      <p>Easygoing country accommodation in Loburn, North Canterbury. We’re getting everything shipshape — in the meantime, drop us a line for early enquiries.</p>
+      <a class="cta" href="mailto:hello@loburnlodge.co.nz" aria-label="Email Loburn Lodge">Email us — hello@loburnlodge.co.nz</a>
+    </div>
+  </section>
+
+  <main id="content" class="section">
+    <div class="wrap">
+      <p class="lead">We’ll soon be welcoming guests to a relaxed farmstay surrounded by gardens, trees, and open paddocks. Check back for updates, or get in touch and we’ll keep you posted.</p>
+      <div class="gallery" aria-label="Photo gallery">
+        <figure class="card">
+          <div class="img one" role="img" aria-label="Farmhouse vista placeholder"></div>
+          <figcaption style="padding:12px 14px; color:#4f5a56">A glimpse of the setting — replace <code>/images/photo-1.jpg</code> with your own photo.</figcaption>
+        </figure>
+        <figure class="card">
+          <div class="img two" role="img" aria-label="Paddocks and trees placeholder"></div>
+          <figcaption style="padding:12px 14px; color:#4f5a56">Another scene — replace <code>/images/photo-2.jpg</code> with your own photo.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+
+  <section id="contact" class="contact section" aria-labelledby="contact-heading">
+    <div class="wrap">
+      <h2 id="contact-heading" style="margin:0 0 10px">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <p style="margin:.2rem 0 .6rem"><strong>Email</strong></p>
+          <p style="margin:0"><a href="mailto:hello@loburnlodge.co.nz">hello@loburnlodge.co.nz</a></p>
+        </div>
+        <div class="contact-box">
+          <p style="margin:.2rem 0 .6rem"><strong>Location</strong></p>
+          <p style="margin:0">Loburn, North Canterbury, New Zealand</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 2025 Loburn Lodge · All rights reserved</div>
+  </footer>
+
+  <!-- Optional: lightweight fade-in -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+      ], { duration: 300, easing: 'ease-out' });
+    });
+  </script>
+</body>
+</html>
