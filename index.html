@@ -35,16 +35,16 @@
       text-rendering: optimizeLegibility;
     }
     /* Header */
-    .topbar { background: var(--bg); color: var(--fg); }
+    .topbar { background: var(--bg); color: var(--fg); box-shadow: 0 2px 12px rgba(0,0,0,.28); }
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 16px; }
     .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .5px; }
-    .brand .mark { width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #0f3d2e 0%, #195844 60%, #2a6a55 100%); box-shadow: inset 0 0 0 2px rgba(255,255,255,.12); }
+    .brand .mark { width: 38px; height: 38px; display:block; filter: drop-shadow(0 1px 1px rgba(0,0,0,.25)); }
     .brand .name { font-size: 1.1rem; }
 
     /* Hero */
     .hero {
       position: relative;
-      min-height: 56vh;
+      min-height: 44.8vh
       display: grid;
       place-items: center;
       color: var(--fg);
@@ -64,7 +64,7 @@
       transform: scale(1.02);
       z-index: 0;
     }
-    .hero .inner { position: relative; z-index: 1; padding: 60px 16px; }
+    .hero .inner { position: relative; z-index: 1; padding: 48px 16px 48px 16px; }
     .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 12px; line-height: 1.15; }
     .hero p { margin: 0 0 20px; font-size: clamp(1rem, 2.2vw, 1.25rem); color: #ecf1ee; }
     .cta {
@@ -96,17 +96,49 @@
 
     /* Footer */
     footer { color: #67736e; font-size: .95rem; padding: 22px 16px 40px; }
+  
+    /* Testimonials */
+    .testimonials { background: #ffffff; }
+    .t-grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+    .t-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+    .t-stars { font-size: 1.1rem; color: var(--accent); letter-spacing: 1px; }
+    .t-quote { margin: 10px 0 0; color: #2e3a36; }
+    .t-author { margin-top: 12px; font-weight: 600; color: #2d3a35; }
+    .t-meta { display:block; color:#66726d; font-weight:500; margin-top:2px; font-size:.95rem; }
+    @media (min-width: 720px) { .t-grid { grid-template-columns: repeat(3, 1fr); } }
+
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
       <div class="brand" aria-label="Loburn Lodge">
-        <div class="mark" aria-hidden="true"></div>
+        
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="g-barn" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#0f3d2e"/>
+              <stop offset="0.6" stop-color="#195844"/>
+              <stop offset="1" stop-color="#2a6a55"/>
+            </linearGradient>
+          </defs>
+          <!-- rounded tile -->
+          <rect x="2" y="2" width="44" height="44" rx="10" fill="url(#g-barn)"/>
+          <!-- roof line -->
+          <path d="M12 26 L24 18 L36 26" fill="none" stroke="#d6a756" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- barn body -->
+          <rect x="14" y="26" width="20" height="12" fill="#f7f7f5" opacity="0.96" rx="1.5"/>
+          <!-- loft window -->
+          <rect x="27" y="21.5" width="4" height="4" fill="none" stroke="#0b2f23" stroke-width="1.6" rx="0.6"/>
+          <!-- door -->
+          <rect x="22" y="28" width="6" height="10" fill="#0b2f23" opacity="0.9" rx="0.8"/>
+          <path d="M25 28 L25 38 M22 33 L28 33" stroke="#f7f7f5" stroke-width="1" opacity="0.9"/>
+        </svg>
+
         <div class="name">Loburn Lodge</div>
       </div>
       <nav aria-label="Quick links" style="opacity:.9">
-        <a href="#contact" style="color:var(--muted); text-decoration:none; font-weight:600">Contact</a>
+        <a href="#testimonials" style="color:var(--muted); text-decoration:none; font-weight:600; margin-right:14px">Testimonials</a><a href="#contact" style="color:var(--muted); text-decoration:none; font-weight:600">Contact</a>
       </nav>
     </div>
   </header>
@@ -114,7 +146,7 @@
   <section class="hero" role="banner">
     <div class="inner wrap">
       <h1>Boutique Farmstay</h1>
-      <p style="text-align: center">Easygoing country accommodation in Loburn, North Canterbury. Comfortable, friendly ccommodation and an easy, relaxing atmosphere.</p>
+      <p style="text-align: center">Easygoing country aaccommodation in Loburn, North Canterbury. Comfortable, friendly accommodation and an easy, relaxing atmosphere.</p>
       <a class="cta" href="mailto:hello@loburnlodge.co.nz" aria-label="Email Loburn Lodge">Email us — hello@loburnlodge.co.nz</a>
     </div>
   </section>
@@ -123,7 +155,9 @@
     <div>
       <p style="text-align: center">We would love to welcome you to a relaxed farmstay surrounded by gardens, trees, and open paddocks. Participate in some of the more enjoyable parts of rural life, or just relax and explore the serene surrounds at your own pace.</p>
 	  <p></p>
-	  <p  style="text-align: center">Single person accommodation only, $125 per night, fully self-service, furnished private apartment with all ameneties.</p>
+	  <p  style="text-align: center">Single person aaccommodation only, $125 per night, fully self-service, furnished private apartment with all amenities.</p>
+	  <p  style="text-align: center">Complimentary pick-up/drop-off in Christchurch if staying 2 or more nights.</p>
+	  <p aria-hidden="true">&nbsp;</p>
       <div class="gallery" aria-label="Photo gallery">
         <figure class="card">
           <div class="img one" role="img" aria-label="Lakes"></div>
@@ -137,6 +171,33 @@
     </div>
   </main>
 
+  
+  <!-- Testimonials (sample placeholders for layout; replace with genuine reviews) -->
+  <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-heading">
+    <div class="wrap">
+      <h2 id="testimonials-heading" style="margin:0 0 10px">Testimonials</h2>
+      <div class="t-grid" role="list">
+        <figure class="t-card" role="listitem">
+          <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="t-quote">“Peaceful, spotless and exactly what I needed after a busy week. Woke to birdsong and a beautiful sunrise over the paddocks.”</blockquote>
+          <figcaption class="t-author">— Sarah M., Christchurch <span class="t-meta">Getaway weekend</span></figcaption>
+        </figure>
+        <figure class="t-card" role="listitem">
+          <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="t-quote">“A cosy, private apartment with everything on hand. Loved wandering the gardens and meeting the resident chooks.  No mobile service made it so peaceful, I never knew how much I needed that!”</blockquote>
+          <figcaption class="t-author">— Jenny R., Wellington <span class="t-meta">Weekend visit</span></figcaption>
+        </figure>
+        <figure class="t-card" role="listitem">
+          <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="t-quote">“Quiet rural setting yet an easy drive to Rangiora. Friendly host and a genuinely relaxing vibe — I’ll be back.”</blockquote>
+          <figcaption class="t-author">— Anika T., Auckland <span class="t-meta">Business stopover</span></figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+
   <section id="contact" class="contact section" aria-labelledby="contact-heading">
     <div class="wrap">
       <h2 id="contact-heading" style="margin:0 0 10px">Contact</h2>
@@ -144,6 +205,10 @@
         <div class="contact-box">
           <p style="margin:.2rem 0 .6rem"><strong>Email</strong></p>
           <p style="margin:0"><a href="mailto:hello@loburnlodge.co.nz">hello@loburnlodge.co.nz</a></p>
+        </div>
+        <div class="contact-box">
+          <p style="margin:.2rem 0 .6rem"><strong>Phone</strong></p>
+          <p style="margin:0"><a href="tel:+642102922520">(021) 029-22520</a></p>
         </div>
         <div class="contact-box">
           <p style="margin:.2rem 0 .6rem"><strong>Location</strong></p>
